@@ -68,6 +68,13 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('funcionarios.index') }}">
+              <span data-feather="file"></span>
+              Funcionários
+            </a>
+          </li>
+
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Relatórios</span>
           <a class="link-secondary" href="#" aria-label="Add a new report">

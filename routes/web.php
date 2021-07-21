@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetoresController;
+use App\Http\Controllers\FuncionariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,10 @@ Route::post('/setor/salvar', [SetoresController::class, 'store'])->name('setor.s
 Route::get('/setor/{id}/editar', [SetoresController::class, 'edit'])->name('setor.edit');
 Route::put('/setor/{id}/atualizar', [SetoresController::class, 'update'])->name('setor.update');
 Route::delete('/setor/{id}', [SetoresController::class, 'destroy'])->name('setor.destroy');
+
+Route::get('/funcionarios', [FuncionariosController::class, 'index'])->name('funcionarios.index');
+Route::get('/funcionarios/cadastro', [FuncionariosController::class, 'create'])->name('funcionarios.create');
+Route::post('/funcionarios/salvar', [FuncionariosController::class, 'store'])->name('funcionarios.store');
+Route::get('/funcionarios/{id}/editar', [FuncionariosController::class, 'edit'])->name('funcionarios.edit');
+Route::put('/funcionarios/{id}/atualizar', [FuncionariosController::class, 'update'])->name('funcionarios.update');
+Route::delete('/funcionarios/{id}', [FuncionariosController::class, 'destroy'])->name('funcionarios.destroy');
