@@ -50,7 +50,7 @@ class SetoresController extends Controller
         return redirect()->route('setor.index')->with('msg', 'Atualizado com sucesso!');
     }
 
-    public function destroy()
+    public function destroy($id)
     {
         Setor::findOrFail($id)->delete();
         return redirect()->route('setor.index');

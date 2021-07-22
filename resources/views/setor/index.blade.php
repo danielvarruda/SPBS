@@ -27,23 +27,31 @@
                 <td>{{ $setor->nome }}</td>
                 <td>{{ $setor->sigla }}</td>
                 <td>{{ $setor->descricao }}</td>
-                <td>{{ $setor->ativo == 1 ? 'ativo' : 'inativo' }}</td>
+                <td>
+                    <button class="btn btn-{{ $setor->ativo == 1 ? 'success' : 'danger' }} badge">
+                        {{ $setor->ativo == 1 ? 'Ativo' : 'Inativo' }}
+                    </button>
+                </td>
                 <td>
                     <div class="d-flex">
-                        <a href="{{ route('setor.edit', ['id' => $setor->id]) }}">
-                            <button class="btn btn-info">
-                                Editar    
-                            </button>    
-                        </a>  
+                        <div>
+                            <a href="{{ route('setor.edit', ['id' => $setor->id]) }}">
+                                <button class="btn btn-info">
+                                    Editar    
+                                </button>    
+                            </a> 
+                        </div> 
     
-                        <form action="{{ route('setor.destroy', ['id' => $setor->id]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            
-                            <button class="btn btn-danger" type="submit">
-                                Excluir
-                            </button>
-                        </form>
+                        <div class="ms-1">
+                            <form action="{{ route('setor.destroy', ['id' => $setor->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                
+                                <button class="btn btn-danger" type="submit">
+                                    Excluir
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </td>
             </tr>   

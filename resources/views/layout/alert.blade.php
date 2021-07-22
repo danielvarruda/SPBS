@@ -9,7 +9,7 @@
 @endif
 
 @if(Session::has('msg'))
-    <div>
+    <div class="alert alert-info">
         {{ Session::get('msg') }}
     </div>
 @endif
