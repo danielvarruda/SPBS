@@ -21,7 +21,10 @@
 
         <div>
             <label for="ativo">Ativo</label>
-            <input type="checkbox" id="ativo" name="ativo">
+            <select name="ativo" id="ativo">
+                <option value="1">Ativo</option>
+                <option value="0">Inativo</option>
+            </select>
         </div>
 
         <div>
@@ -30,4 +33,6 @@
             </button>
         </div>
     </form>
+    
+    @include('layout.alert')
 @endsection

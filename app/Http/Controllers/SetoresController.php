@@ -11,7 +11,7 @@ class SetoresController extends Controller
     //
     public function index()
     {
-        $setores = Setor::from('setores')->get();
+        $setores = Setor::all();
 
         return view('setor.index', ['setores' => $setores]);
     }
@@ -23,7 +23,13 @@ class SetoresController extends Controller
 
     public function store(SetorRequest $request)
     {
-        Setor::create($request->all());
+        try {
+            $result = Setor::create($request->all());
+        } catch (PDOException $e) {
+            throwabble($e);
+        }
+
+        return redirect()->route('setor.index')->with('msg', 'Cadastrado com sucesso!');
     }
 
     public function edit($id)
@@ -36,12 +42,12 @@ class SetoresController extends Controller
     public function update(SetorRequest $request, $id)
     {
         try {
-            Setor::findOrFail($id)->update($request);
-
-            return redirect()->route('setor.index');
+            Setor::findOrFail($id)->update($request->all());
         } catch (PDOException $e) {
-            dd($e);
+            throwabble($e);
         }
+
+        return redirect()->route('setor.index')->with('msg', 'Atualizado com sucesso!');
     }
 
     public function destroy()

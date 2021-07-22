@@ -1,9 +1,14 @@
 @extends('layout.app')
 
 @section('content')
-    <a href="{{ route('setor.create') }}">Novo</a>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Setor</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <a class="btn btn-primary" href="{{ route('setor.create') }}">Novo</a>
+        </div>
+    </div>
 
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -22,25 +27,29 @@
                 <td>{{ $setor->nome }}</td>
                 <td>{{ $setor->sigla }}</td>
                 <td>{{ $setor->descricao }}</td>
-                <td>{{ $setor->status }}</td>
+                <td>{{ $setor->ativo == 1 ? 'ativo' : 'inativo' }}</td>
                 <td>
-                    <a href="{{ route('setor.edit', ['id' => $setor->id]) }}">
-                        <button>
-                            Editar    
-                        </button>    
-                    </a>  
-                    
-                    <form action="{{ route('setor.destroy', ['id' => $setor->id]) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        
-                        <button type="submit">
-                            Excluir
-                        </button>
-                    </form>
+                    <div class="d-flex">
+                        <a href="{{ route('setor.edit', ['id' => $setor->id]) }}">
+                            <button class="btn btn-info">
+                                Editar    
+                            </button>    
+                        </a>  
+    
+                        <form action="{{ route('setor.destroy', ['id' => $setor->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            
+                            <button class="btn btn-danger" type="submit">
+                                Excluir
+                            </button>
+                        </form>
+                    </div>
                 </td>
             </tr>   
             @endforeach
         </tbody>
     </table>
+
+    @include('layout.alert')
 @endsection

@@ -26,8 +26,10 @@ class SetorRequest extends FormRequest
         $id = $this->route()->parameter('id');
 
         return [
-            'nome' => 'unique,nome,'.$id.',id',
-            'sigla' => 'unique,sigla,'.$id.',id'
+            'nome' => 'required|unique:setores,nome,'.$id.',id',
+            'sigla' => 'required|unique:setores,sigla,'.$id.',id',
+            'descricao' => 'required',
+            'ativo' => 'required'
         ];
     }
 }

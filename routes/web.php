@@ -14,6 +14,10 @@ use App\Http\Controllers\SetoresController;
 |
 */
 
+Route::get('/home', function() {
+    return view('home');
+})->name('home');
+
 Route::get('/setor', [SetoresController::class, 'index'])->name('setor.index');
 Route::get('/setor/cadastro', [SetoresController::class, 'create'])->name('setor.create');
 Route::post('/setor/salvar', [SetoresController::class, 'store'])->name('setor.store');
