@@ -13,7 +13,7 @@ class SetoresController extends Controller
     {
         $setores = Setor::all();
 
-        return view('setor.index', ['setores' => $setores]);
+        return view('setor.index', compact('setores'));
     }
 
     public function create()
@@ -36,7 +36,7 @@ class SetoresController extends Controller
     {
         $setor = Setor::find($id);
 
-        return view('setor.edit', ['setor' => $setor]);
+        return view('setor.edit', compact('setor'));
     }
 
     public function update(SetorRequest $request, $id)
