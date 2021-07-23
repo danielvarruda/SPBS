@@ -53,6 +53,6 @@ class SetoresController extends Controller
     public function destroy($id)
     {
         Setor::findOrFail($id)->delete();
-        return redirect()->route('setor.index');
+        return redirect()->route('setor.index')->with('msg', 'Excluído com sucesso!');
     }
 }

@@ -15,22 +15,26 @@
 
         <div class="form-group">
             <label for="matricula">Matrícula</label>
-            <input class="form-control" type="text" id="sigla" name="matricula">
+            <input class="form-control" type="text" id="matricula" name="matricula">
         </div>
 
         <div class="form-group">
             <label for="setor">Setor</label>
-            <input class="form-control" type="text" id="descricao" name="setor">
+            <select class="form-control" type="text" id="setor" name="setor_id">
+                @foreach ($setores as $setor)
+                    <option value="{{$setor -> id}}">{{$setor -> nome}}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
             <label for="dt_nascimento">Data de Nascimento</label>
-            <input class="form-control" type="date" id="descricao" name="dt_nascimento">
+            <input class="form-control" type="date" id="dtNascimento" name="dt_nascimento">
         </div>
 
         <div class="form-group">
             <label for="escala">Escala</label>
-            <input class="form-control" type="text" id="descricao" name="escala_id">
+            <input class="form-control" type="number" id="escala" name="escala_id" placeholder="Digite um número...">
         </div>
 
         <div class="form-group">

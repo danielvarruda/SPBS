@@ -28,19 +28,18 @@
                 <td>{{ $key + 1 }}</td>
                 <td>{{ $funcionario->nome }}</td>
                 <td>{{ $funcionario->matricula }}</td>
-                <td>{{ $funcionario->setor }}</td>
+                <td>{{ $funcionario->setor->nome}}</td>
                 <td>{{ $funcionario->dt_nascimento }}</td>
                 <td>{{ $funcionario->escala_id}}</td>
-                <td>{{ $funcionario->ativo}}</td>
                 <td>
-                    <button class="btn btn-{{ $funcionarios->ativo == 1 ? 'success' : 'danger' }} badge">
-                        {{ $funcionarios->ativo == 1 ? 'Ativo' : 'Inativo' }}
+                    <button class="btn btn-{{ $funcionario->ativo == 1 ? 'success' : 'danger' }} badge">
+                        {{ $funcionario->ativo == 1 ? 'Ativo' : 'Inativo' }}
                     </button>
                 </td>
                 <td>
                     <div class="d-flex">
                         <div>
-                            <a href="{{ route('funcionarios.edit', ['id' => $funcionarios->id]) }}">
+                            <a href="{{ route('funcionarios.edit', ['id' => $funcionario->id]) }}">
                                 <button class="btn btn-info">
                                     Editar    
                                 </button>    
@@ -48,7 +47,7 @@
                         </div> 
     
                         <div class="ms-1">
-                            <form action="{{ route('funcionarios.destroy', ['id' => $funcionarios->id]) }}" method="POST">
+                            <form action="{{ route('funcionarios.destroy', ['id' => $funcionario->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 

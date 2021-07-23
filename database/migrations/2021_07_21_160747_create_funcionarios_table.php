@@ -19,6 +19,7 @@ class CreateFuncionariosTable extends Migration
             $table->string('matricula');
             $table->integer('setor_id');
             $table->date('dt_nascimento');
+            $table->integer('escala_id')->nullable();
             $table->boolean('ativo')->nullable()->default(false);
             $table->timestamps();
         });

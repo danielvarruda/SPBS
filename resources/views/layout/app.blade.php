@@ -42,12 +42,12 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  {{-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
       <a class="nav-link px-3" href="#">Sign out</a>
     </div>
-  </div>
+  </div> --}}
 </header>
 
 <div class="container-fluid">
@@ -75,7 +75,7 @@
             </a>
           </li>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        {{-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Relatórios</span>
           <a class="link-secondary" href="#" aria-label="Add a new report">
             <span data-feather="plus-circle"></span>
@@ -89,7 +89,7 @@
             </a>
           </li>
         </ul>
-      </div>
+      </div> --}}
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
