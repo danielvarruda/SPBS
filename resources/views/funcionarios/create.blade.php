@@ -5,7 +5,7 @@
         <h1 class="h2">Funcionário</h1>
     </div>
 
-    <form action="{{ route('funcionarios.store') }}" method="POST">
+    <form action="{{ route('login') }}" method="POST">
         @csrf
 
         <div class="form-group">   
