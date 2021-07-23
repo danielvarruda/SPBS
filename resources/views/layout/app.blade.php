@@ -55,12 +55,12 @@
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">
               <span data-feather="home"></span>
               Dashboard
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href="{{ route('setor.index') }}">
               <span data-feather="file"></span>
@@ -92,7 +92,7 @@
       </div> --}}
     </nav>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="min-height: 100vh">
 
       <div class="col-sm-11 col-lg-10 mx-auto">
         @yield('content')
