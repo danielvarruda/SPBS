@@ -26,6 +26,8 @@ Route::get('/setor/{id}/editar', [SetoresController::class, 'edit'])->name('seto
 Route::put('/setor/{id}/atualizar', [SetoresController::class, 'update'])->name('setor.update');
 Route::delete('/setor/{id}', [SetoresController::class, 'destroy'])->name('setor.destroy');
 
+Route::get('/setor/{id}/funcionarios/', [SetoresController::class, 'funcionarios'])->name('setor.funcionarios');
+
 Route::get('/funcionarios', [FuncionariosController::class, 'index'])->name('funcionarios.index');
 Route::get('/funcionarios/cadastro', [FuncionariosController::class, 'create'])->name('funcionarios.create');
 Route::post('/funcionarios/salvar', [FuncionariosController::class, 'store'])->name('funcionarios.store');

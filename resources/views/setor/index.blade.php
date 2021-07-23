@@ -35,6 +35,14 @@
                 <td>
                     <div class="d-flex">
                         <div>
+                            <a href="{{ route('setor.funcionarios', ['id' => $setor->id]) }}">
+                                <button class="btn btn-warning">
+                                    Funcionários    
+                                </button>
+                            </a> 
+                        </div> 
+
+                        <div class="ms-1">
                             <a href="{{ route('setor.edit', ['id' => $setor->id]) }}">
                                 <button class="btn btn-info">
                                     Editar    

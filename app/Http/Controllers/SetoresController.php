@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SetorRequest;
 use App\Setor;
+use App\Funcionario;
 
 class SetoresController extends Controller
 {
@@ -54,5 +55,13 @@ class SetoresController extends Controller
     {
         Setor::findOrFail($id)->delete();
         return redirect()->route('setor.index')->with('msg', 'Excluído com sucesso!');
+    }
+
+    public function funcionarios($id)
+    {
+        $setores = Setor::find($id);
+        $funcionarios = $setores->funcionarios;
+
+        return view('setor.funcionarios', compact('funcionarios'));
     }
 }

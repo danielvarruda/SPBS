@@ -12,4 +12,9 @@ class Setor extends Model
     protected $fillable = [
         'nome', 'sigla', 'descricao', 'ativo'
     ];
+
+    public function funcionarios()
+    {
+        return $this->hasMany(Funcionario::class);
+    }
 }
